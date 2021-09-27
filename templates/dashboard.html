@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+		rel="stylesheet">
+	<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="/static/css/dashboard.css" rel="stylesheet">
+	<title>Dashboard</title>
+</head>
+
+<body>
+	<section id="hero" class="d-flex justify-cntent-center align-items-center">
+		<div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+			<div class="carousel-item active">
+				<form method="POST">
+					<div class="container-fluid">
+						<div class="col-lg-10 col-md-6 col-sm-12">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 pt-3">
+									<div class="wrapper">
+										<div class="search-input">
+											<a href="" target="_blank" hidden></a>
+											<input type="text" placeholder="Type to search.." id="symbol" name="symbol"
+												required>
+											<div class="autocom-box">
+												<!-- here list are inserted from javascript -->
+											</div>
+											<div class="icon"><i class="fas fa-search"></i></div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 pt-3">
+									<div class="wrapper">
+										<div class="input">
+											<div class="input-group">
+												<input type="number" min="2005" class="form-control" max="2021" step="1"
+													value="2016" id="syear" name="syear" placeholder="Start Year">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 pt-3">
+									<div class="wrapper">
+										<div class="input">
+											<div class="input-group">
+												<input type="number" min="2005" class="form-control" max="2021" step="1"
+													value="2020" id="eyear" name="eyear">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 pt-3">
+									<div class="wrapper">
+										<div class="input">
+											<div class="input-group">
+												<input type="number" aria-label="amount" class="form-control"
+													id="amount" name="amount" placeholder="amount">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-2 col-md-6 col-sm-12 pt-3">
+									<div class="wrapper">
+										<button type="submit" class="btn btn-danger">
+											Enter</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</section>
+	<div>
+		<br />
+		<h2>Money in wallet: {{m}}</h2><br>
+		<h2>Total Stocks In the
+			account: {{c}}</h2><br>
+		<h2>Total Profit Made: {{profit}}</h2><br>
+		<h2>Total Money Invested: {{dm}}</h2>
+		<br>
+		<p align="center">
+			<img src="{{ url_for('static', filename=graph) }}" />
+		</p>
+	</div>
+	<script src="/static/js/suggestions.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/main.js"></script>
+</body>
+
+</html>
